@@ -37,6 +37,8 @@ jobs:
         with:
           arguments: :convention:publishAllPublicationsToMavenCentralRepository --stacktrace
   release:
+    permissions:
+      contents: write
     needs: [ publish ]
     name: Create release
     runs-on: ubuntu-latest
