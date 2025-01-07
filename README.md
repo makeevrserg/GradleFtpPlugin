@@ -6,7 +6,7 @@
 [versions]
 gradle-ftp = "<version>"
 [plugins]
-gradle-ftp = { id = "ru.astrainteractive.gradleftp", version.ref = "gradle-ftp" }
+gradle-ftp = { id = "ru.astrainteractive.ftpplugin.gradleftp", version.ref = "gradle-ftp" }
 ```
 
 ```kotlin
