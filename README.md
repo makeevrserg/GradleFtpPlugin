@@ -1,4 +1,4 @@
-![version](https://img.shields.io/maven-central/v/ru.astrainteractive.gradleplugin/convention?style=flat-square)
+![version](https://img.shields.io/maven-central/v/ru.astrainteractive.ftpplugin/convention?style=flat-square)
 
 ## Gradle Ftp Plugin
 
