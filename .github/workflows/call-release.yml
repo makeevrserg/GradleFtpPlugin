@@ -35,7 +35,7 @@ jobs:
       - name: Run publish
         uses: gradle/gradle-build-action@v3
         with:
-          arguments: :convention:publishAllPublicationsToMavenCentralRepository--stacktrace
+          arguments: :convention:publishAllPublicationsToMavenCentralRepository --stacktrace
   release:
     needs: [ publish ]
     name: Create release
