@@ -1,4 +1,4 @@
-name: "Test publish"
+name: "Validate local publish"
 on:
   workflow_call:
     secrets:
@@ -14,12 +14,12 @@ on:
         required: true
 
 jobs:
-  tests:
+  validate_publish:
     strategy:
       matrix:
         target:
-          - ":convention:publishToMavenLocal"
-    name: "Try publish local"
+          - "publishToMavenLocal"
+    name: "Validate local publish"
     runs-on: ubuntu-latest
     env:
       ORG_GRADLE_PROJECT_mavenCentralUsername: ${{ secrets.ORG_GRADLE_PROJECT_MAVENCENTRALUSERNAME }}
@@ -29,11 +29,11 @@ jobs:
       ORG_GRADLE_PROJECT_signingInMemoryKeyPassword: ${{ secrets.ORG_GRADLE_PROJECT_SIGNINGINMEMORYKEYPASSWORD }}
     steps:
       - uses: actions/checkout@v4
-      - name: Set up JDK 1.11
+      - name: Set up JDK 1.17
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
-          java-version: '11'
+          java-version: '17'
       - name: Give gradle permission
         run: chmod +x gradlew
       - name: Run publish
