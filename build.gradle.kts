@@ -1,4 +1,3 @@
-import com.vanniktech.maven.publish.SonatypeHost
 import org.jetbrains.kotlin.gradle.dsl.KotlinTopLevelExtension
 
 plugins {
@@ -59,10 +58,7 @@ subprojects {
     }
 
     project.configure<com.vanniktech.maven.publish.MavenPublishBaseExtension> {
-        publishToMavenCentral(
-            host = SonatypeHost.CENTRAL_PORTAL,
-            automaticRelease = false
-        )
+        publishToMavenCentral(automaticRelease = false)
 
         signAllPublications()
         coordinates(
