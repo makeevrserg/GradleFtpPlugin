@@ -1,10 +1,9 @@
-import com.vanniktech.maven.publish.SonatypeHost
 import org.jetbrains.kotlin.gradle.dsl.KotlinTopLevelExtension
 
 plugins {
     `kotlin-dsl`
-    id("com.vanniktech.maven.publish") version "0.33.0" apply false
-    id("ru.astrainteractive.gradleplugin.detekt") version "1.8.0"
+    id("com.vanniktech.maven.publish") version "0.34.0" apply false
+    id("ru.astrainteractive.gradleplugin.detekt") version "1.11.0"
     alias(libs.plugins.gradle.shadow) apply false
     alias(libs.plugins.kotlin.jvm) apply false
 }
@@ -59,10 +58,7 @@ subprojects {
     }
 
     project.configure<com.vanniktech.maven.publish.MavenPublishBaseExtension> {
-        publishToMavenCentral(
-            host = SonatypeHost.CENTRAL_PORTAL,
-            automaticRelease = false
-        )
+        publishToMavenCentral(automaticRelease = false)
 
         signAllPublications()
         coordinates(
