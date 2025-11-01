@@ -3,7 +3,7 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinTopLevelExtension
 plugins {
     `kotlin-dsl`
     id("com.vanniktech.maven.publish") version "0.34.0" apply false
-    id("ru.astrainteractive.gradleplugin.detekt") version "1.11.0"
+    id("ru.astrainteractive.gradleplugin.detekt") version "1.11.1"
     alias(libs.plugins.gradle.shadow) apply false
     alias(libs.plugins.kotlin.jvm) apply false
 }
