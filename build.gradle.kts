@@ -2,7 +2,7 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinTopLevelExtension
 
 plugins {
     `kotlin-dsl`
-    id("com.vanniktech.maven.publish") version "0.35.0" apply false
+    id("com.vanniktech.maven.publish") version "0.36.0" apply false
     id("ru.astrainteractive.gradleplugin.detekt") version "1.13.2"
     alias(libs.plugins.gradle.shadow) apply false
     alias(libs.plugins.kotlin.jvm) apply false
