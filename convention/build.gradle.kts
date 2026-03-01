@@ -12,7 +12,7 @@ dependencies {
     implementation(libs.dokka.gradle.plugin)
     implementation(libs.dokka.core)
     implementation(libs.dokka.base)
-    implementation("com.vanniktech:gradle-maven-publish-plugin:0.35.0")
+    implementation("com.vanniktech:gradle-maven-publish-plugin:0.36.0")
     implementation(libs.ssh)
 }
 
