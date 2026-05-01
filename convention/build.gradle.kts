@@ -1,3 +1,6 @@
+import ru.astrainteractive.gradleplugin.property.util.requireProjectInfo
+import ru.astrainteractive.gradleplugin.property.util.requirePublishInfo
+
 plugins {
     `kotlin-dsl`
     id("java-gradle-plugin")
@@ -12,18 +15,17 @@ dependencies {
     implementation(libs.dokka.gradle.plugin)
     implementation(libs.dokka.core)
     implementation(libs.dokka.base)
-    implementation("com.vanniktech:gradle-maven-publish-plugin:0.35.0")
     implementation(libs.ssh)
 }
 
 gradlePlugin {
-    website.set(projectWeb)
-    vcsUrl.set(projectWeb)
-    description = projectDescription
+    website.set(requireProjectInfo.url)
+    vcsUrl.set(requirePublishInfo.gitHubUrl)
+    description = requireProjectInfo.description
     plugins {
         create("gradleftp") {
-            id = "$projectGroup.$name"
-            implementationClass = "$projectGroup.plugin.FtpPlugin"
+            id = "${requireProjectInfo.group}.$name"
+            implementationClass = "${requireProjectInfo.group}.plugin.FtpPlugin"
             displayName = "KLibs detekt plugin"
             description = "Default setup for detekt plugin"
             tags.set(listOf("klibs"))
