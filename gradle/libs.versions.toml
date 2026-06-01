@@ -1,8 +1,8 @@
 [versions]
-klibs-gradleplugin = "2.0.1"
-kotlin-android-application = "9.1.0"
+klibs-gradleplugin = "2.1.2"
+kotlin-android-application = "9.2.1"
 kotlin-dokka = "2.2.0"
-kotlin-version = "2.3.20"
+kotlin-version = "2.3.21"
 lint-detekt = "1.23.8"
 ssh = "0.40.0"
 
