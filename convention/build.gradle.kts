@@ -4,7 +4,7 @@ import ru.astrainteractive.gradleplugin.property.util.requirePublishInfo
 plugins {
     `kotlin-dsl`
     id("java-gradle-plugin")
-    id("com.vanniktech.maven.publish")
+    id("ru.astrainteractive.gradleplugin.publication")
 }
 
 dependencies {
@@ -26,9 +26,9 @@ gradlePlugin {
         create("gradleftp") {
             id = "${requireProjectInfo.group}.$name"
             implementationClass = "${requireProjectInfo.group}.plugin.FtpPlugin"
-            displayName = "KLibs detekt plugin"
-            description = "Default setup for detekt plugin"
-            tags.set(listOf("klibs"))
+            displayName = "Gradle FTP Plugin"
+            description = "Uploads and removes files on a remote host over SFTP from Gradle tasks"
+            tags.set(listOf("ftp", "sftp", "upload", "klibs"))
         }
     }
 }

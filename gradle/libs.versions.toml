@@ -1,13 +1,13 @@
 [versions]
-klibs-gradleplugin = "2.0.1"
-kotlin-android-application = "9.1.0"
+klibs-gradleplugin = "2.3.0"
+kotlin-android-tools = "9.1.0"
 kotlin-dokka = "2.2.0"
-kotlin-version = "2.3.20"
+kotlin-version = "2.4.10"
 lint-detekt = "1.23.8"
 ssh = "0.40.0"
 
 [libraries]
-android-toolsBuild = { module = "com.android.tools.build:gradle", version.ref = "kotlin-android-application" }
+android-toolsBuild = { module = "com.android.tools.build:gradle", version.ref = "kotlin-android-tools" }
 dokka-base = { module = "org.jetbrains.dokka:dokka-base", version.ref = "kotlin-dokka" }
 dokka-core = { module = "org.jetbrains.dokka:dokka-core", version.ref = "kotlin-dokka" }
 dokka-gradle-plugin = { module = "org.jetbrains.dokka:dokka-gradle-plugin", version.ref = "kotlin-dokka" }
