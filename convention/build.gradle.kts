@@ -4,7 +4,8 @@ import ru.astrainteractive.gradleplugin.property.util.requirePublishInfo
 plugins {
     `kotlin-dsl`
     id("java-gradle-plugin")
-    id("ru.astrainteractive.gradleplugin.publication")
+    alias(libs.plugins.klibs.gradle.publication)
+    alias(libs.plugins.klibs.rules.linter)
 }
 
 dependencies {
@@ -28,7 +29,14 @@ gradlePlugin {
             implementationClass = "${requireProjectInfo.group}.plugin.FtpPlugin"
             displayName = "Gradle FTP Plugin"
             description = "Uploads and removes files on a remote host over SFTP from Gradle tasks"
-            tags.set(listOf("ftp", "sftp", "upload", "klibs"))
+            tags.set(
+                listOf(
+                    "ftp",
+                    "sftp",
+                    "upload",
+                    "klibs"
+                )
+            )
         }
     }
 }

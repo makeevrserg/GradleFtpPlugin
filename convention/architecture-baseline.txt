@@ -1,0 +1,9 @@
+KindShape	src/main/kotlin/ru/astrainteractive/ftpplugin/plugin/FtpPlugin.kt	FtpPlugin
+KindShape	src/main/kotlin/ru/astrainteractive/ftpplugin/property/PropertyValue.kt	PropertyValue
+KindShape	src/main/kotlin/ru/astrainteractive/ftpplugin/property/extension/PrimitivePropertyValueExt.kt	PrimitivePropertyValueExt
+KindShape	src/main/kotlin/ru/astrainteractive/ftpplugin/task/ClearFilesTask.kt	ClearFilesTask
+KindShape	src/main/kotlin/ru/astrainteractive/ftpplugin/task/ClearFolderTask.kt	ClearFolderTask
+KindShape	src/main/kotlin/ru/astrainteractive/ftpplugin/task/UploadFileTask.kt	UploadFileTask
+PublishedLibraryExplicitApi	build.gradle.kts	explicitApi
+UtilShape	src/main/kotlin/ru/astrainteractive/ftpplugin/model/SftpConnection.kt	SftpConnectionExtension.configure
+UtilShape	src/main/kotlin/ru/astrainteractive/ftpplugin/model/SftpConnection.kt	SftpConnectionExtension.toConnection

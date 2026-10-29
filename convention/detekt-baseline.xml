@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<SmellBaseline>
+  <ManuallySuppressedIssues/>
+  <CurrentIssues>
+    <ID>ClassSignature:SecretPropertyValue.kt:SecretPropertyValue : PropertyValue</ID>
+    <ID>ClassSignature:SftpConnection.kt:Credential$Password : Credential</ID>
+    <ID>ClassSignature:SftpConnection.kt:Credential$PublicKey : Credential</ID>
+    <ID>DataClassDefaultValue:SftpConnection.kt:SftpConnection$val hostsStrategy: LoadKnownHostsStrategy = LoadKnownHostsStrategy.None</ID>
+    <ID>DataClassDefaultValue:SftpConnection.kt:SftpConnection$val keyVerifierStrategy: KeyVerifierStrategy = KeyVerifierStrategy.Promicious</ID>
+    <ID>DeclarationOrder:SecretPropertyValue.kt:SecretPropertyValue$/** * System.getenv doesn't allow dots */ private val envKey: String = key.replace(".", "_")</ID>
+    <ID>DeclarationOrder:SecretPropertyValue.kt:SecretPropertyValue$override val isExists: Boolean get() = value.isSuccess</ID>
+    <ID>DeclarationOrder:SecretPropertyValue.kt:SecretPropertyValue$override val value: Result&lt;String&gt; get() = kotlin.runCatching { // try to get system ci property val systemEnvProperty = System.getenv(envKey) if (systemEnvProperty != null) return@runCatching systemEnvProperty.toString() project.logger.warn("System.enviroment $envKey is missing. Getting it from local.properties") // if not ci getting from local.properties val properties = Properties().apply { val secretPropsFile = localPropertiesFile load(secretPropsFile.reader()) } return@runCatching properties.getProperty(key)?.toString() ?: throw GradleException("Required property $key not defined!") }</ID>
+    <ID>DeclarationOrder:SecretPropertyValue.kt:SecretPropertyValue$private val localPropertiesFile: File get() = project.fileOrParentFile("local.properties") ?: project.rootProject.file("local.properties").takeIf(File::exists) ?: throw GradleException("No local.properties file found")</ID>
+    <ID>FunctionExpressionBody:PropertyValue.kt:PropertyValue.Companion${ return SecretPropertyValue(this, path) }</ID>
+    <ID>FunctionExpressionBody:SftpConnection.kt:{ return SftpConnection( host = host ?: error("Host is nulL!"), port = port ?: error("Port is null!"), credential = credential ?: error("Credential is null!"), hostsStrategy = hostsStrategy, keyVerifierStrategy = keyVerifierStrategy ) }</ID>
+    <ID>GetOrThrowInMain:PrimitivePropertyValueExt.kt:PrimitivePropertyValueExt$getOrThrow()</ID>
+    <ID>ImplicitItParameter:PrimitivePropertyValueExt.kt:PrimitivePropertyValueExt$it</ID>
+    <ID>OneTypeFamilyPerFile:SftpConnection.kt:KeyVerifierStrategy</ID>
+    <ID>OneTypeFamilyPerFile:SftpConnection.kt:LoadKnownHostsStrategy</ID>
+    <ID>OneTypeFamilyPerFile:SftpConnection.kt:SftpConnection</ID>
+    <ID>OneTypeFamilyPerFile:SftpConnection.kt:SftpConnectionExtension</ID>
+    <ID>OneTypeFamilyPerFile:SftpConnection.kt:fun SftpConnectionExtension.configure: SftpConnectionExtension</ID>
+    <ID>OneTypeFamilyPerFile:SftpConnection.kt:fun SftpConnectionExtension.toConnection: SftpConnection</ID>
+    <ID>ThrowInsideRunCatching:SecretPropertyValue.kt:SecretPropertyValue$throw GradleException("Required property $key not defined!")</ID>
+    <ID>TrailingCommaOnCallSite:SftpConnection.kt:( host = host ?: error("Host is nulL!"), port = port ?: error("Port is null!"), credential = credential ?: error("Credential is null!"), hostsStrategy = hostsStrategy, keyVerifierStrategy = keyVerifierStrategy )</ID>
+    <ID>TrailingCommaOnCallSite:SftpConnection.kt:( username = username, password = password )</ID>
+    <ID>TrailingCommaOnDeclarationSite:SecretPropertyValue.kt:SecretPropertyValue$( private val project: Project, override val key: String )</ID>
+    <ID>TrailingCommaOnDeclarationSite:SftpConnection.kt:Credential.Password$( val username: String, val password: String )</ID>
+    <ID>TrailingCommaOnDeclarationSite:SftpConnection.kt:SftpConnection$( val host: String, val port: Int, val credential: Credential, val hostsStrategy: LoadKnownHostsStrategy = LoadKnownHostsStrategy.None, val keyVerifierStrategy: KeyVerifierStrategy = KeyVerifierStrategy.Promicious )</ID>
+  </CurrentIssues>
+</SmellBaseline>

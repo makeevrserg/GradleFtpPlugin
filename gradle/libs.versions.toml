@@ -1,5 +1,6 @@
 [versions]
 klibs-gradleplugin = "2.7.2"
+klibs-rules = "0.7.0"
 kotlin-android-tools = "9.1.0"
 kotlin-dokka = "2.2.0"
 kotlin-version = "2.4.20"
@@ -16,6 +17,7 @@ lint-detekt-gradle = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugi
 ssh = { module = "com.hierynomus:sshj", version.ref = "ssh" }
 
 [plugins]
+klibs-rules-linter = { id = "ru.astrainteractive.klibs.rules.gradle.linter", version.ref = "klibs-rules" }
 klibs-gradle-detekt = { id = "ru.astrainteractive.gradleplugin.detekt", version.ref = "klibs-gradleplugin" }
 klibs-gradle-java-version = { id = "ru.astrainteractive.gradleplugin.java.version", version.ref = "klibs-gradleplugin" }
 klibs-gradle-publication = { id = "ru.astrainteractive.gradleplugin.publication", version.ref = "klibs-gradleplugin" }
