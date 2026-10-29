@@ -6,12 +6,14 @@ import org.gradle.api.DefaultTask
 import org.gradle.api.provider.Property
 import org.gradle.api.tasks.Input
 import org.gradle.api.tasks.TaskAction
+import org.gradle.api.tasks.UntrackedTask
 import org.gradle.kotlin.dsl.property
-import ru.astrainteractive.ftpplugin.connection.SftpConnectionManager
+import ru.astrainteractive.ftpplugin.connection.di.SftpConnectionModule
 import ru.astrainteractive.ftpplugin.model.SftpConnectionExtension
 import ru.astrainteractive.ftpplugin.model.configure
 import ru.astrainteractive.ftpplugin.model.toConnection
 
+@UntrackedTask(because = "SFTP operations have remote side effects")
 abstract class ClearFolderTask : DefaultTask() {
 
     @get:Input
@@ -59,14 +61,15 @@ abstract class ClearFolderTask : DefaultTask() {
     @TaskAction
     fun run() {
         val sftpConnection = taskExtension.get().toConnection()
-        val connectionManager = SftpConnectionManager(sftpConnection)
+        val connectionSession = SftpConnectionModule.provideSession(sftpConnection)
         try {
-            connectionManager.use {
+            connectionSession.connect()
+            connectionSession.use {
                 val path = targetDirPath.get()
                 clearDirectoryRecursively(this, path)
             }
         } finally {
-            connectionManager.disconnect()
+            connectionSession.disconnect()
         }
     }
 }

@@ -1,7 +1,7 @@
 package ru.astrainteractive.ftpplugin.property
 
 import org.gradle.api.Project
-import ru.astrainteractive.ftpplugin.property.internal.SecretPropertyValue
+import ru.astrainteractive.ftpplugin.property.file.SecretPropertyValue
 
 /**
  * This interface will load [String] value from property file
